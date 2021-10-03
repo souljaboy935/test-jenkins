@@ -1,5 +1,7 @@
 pipeline {
-  agent {CentOS_client_slave}
+  agent ('label') {
+    CentOS_client_slave
+  }
   stages {
     stage ('build') {
       steps {
