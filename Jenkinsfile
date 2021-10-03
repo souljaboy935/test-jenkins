@@ -1,5 +1,5 @@
 pipeline {
-  agent {CentOS-client-slave}
+  agent any
   stages {
     stage ('build') {
       steps {
