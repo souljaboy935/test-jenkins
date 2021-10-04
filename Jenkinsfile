@@ -14,11 +14,13 @@ pipeline {
     stage ('test') {
       steps {
           echo 'Testing phase...'
+        sh 'lsblk'
       }
     }
     stage ('release') {
       steps {
           echo 'Release successful build to the customers...'
+        mail bcc: '', body: 'This was sent automatically after building, your software is ready', cc: '', from: '', replyTo: '', subject: 'Sent from Jenkins', to: 'soulja@host1.ansible.com'
       }
     }
   }
